@@ -1,21 +1,46 @@
 extends Label
 
-func _on_sun_enter_tree():
-	var pos_sun = get_node("../Sun").get_pos()
+# All this shit needs to be rewritten. How is it possible to
+# not call all of these stupid functions during the process?
+
+func find_sun():
+	return get_node("../Sun")
+
+func find_earth():
+	return get_node("../Earth")
+
+func sun_pos():
+	return find_sun().get_pos()
+
+func earth_pos():
+	return find_earth().get_pos()
+
+func sun_rot():
+	return find_sun().get_rot()
+
+func sun_look():
+	return Vector2(cos(sun_rot()), sin(sun_rot()))
+
+func sun_look_to_earth():
+	return Vector2(earth_pos() - sun_pos())
+
+func sun_look_magnitude():
+	return sun_look().length()
+
+func sun_look_to_earth_magnitude():
+	return sun_look_to_earth().length()
 
 func _ready():
-	var pos_sun = get_node("../Sun").get_pos()
-	var pos_earth = get_node("../Earth").get_pos()
-	var angle = get_node("../Sun").get_angle_to(Vector2(pos_earth))
-	print(angle)
 	set_process(true)
 
 func _process(delta):
-	var pos_sun = get_node("../Sun").get_pos()
-	var pos_earth = get_node("../Earth").get_pos()
-	var angle = get_node("../Sun").get_angle_to(Vector2(pos_earth))
-	set_text("angle " + str(angle) + " pos_sun " + str(pos_sun) + " pos_earth " + str(pos_earth))
-	
+	# janky
+	var numerator = sun_look().dot(sun_look_to_earth())
+	# ass
+	var denominator = sun_look_magnitude() * sun_look_to_earth_magnitude()
+	# shit
+	var angle = acos(numerator / denominator) * (180 / PI)
+	if (sun_look_to_earth().y > 0):
+		angle = (180 - angle) + 180
 
-func _on_Sun_enter_tree():
-	pass # replace with function body
+	set_text("Angle relative to x-axis (deg) : " + str("%.f" % angle))
