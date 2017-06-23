@@ -1,17 +1,18 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://binary.gd" type="Script" id=1]
-[ext_resource path="res://time.gd" type="Script" id=2]
+[ext_resource path="res://orbital_speed.gd" type="Script" id=2]
 [ext_resource path="res://sun.png" type="Texture" id=3]
 [ext_resource path="res://sun.gd" type="Script" id=4]
 [ext_resource path="res://planet.png" type="Texture" id=5]
 [ext_resource path="res://earth.gd" type="Script" id=6]
+[ext_resource path="res://time.gd" type="Script" id=7]
 
 [node name="Space" type="Node2D"]
 
 script/script = ExtResource( 1 )
 
-[node name="Time" type="Label" parent="."]
+[node name="Orbital Speed" type="Label" parent="."]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -26,21 +27,6 @@ lines_skipped = 0
 max_lines_visible = -1
 script/script = ExtResource( 2 )
 
-[node name="Orbital Speed" type="Label" parent="."]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 240.0
-margin/top = 131.0
-margin/right = 280.0
-margin/bottom = 145.0
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-script/script = ExtResource( 2 )
-
 [node name="Sun" type="Sprite" parent="."]
 
 texture = ExtResource( 3 )
@@ -50,5 +36,20 @@ script/script = ExtResource( 4 )
 
 texture = ExtResource( 5 )
 script/script = ExtResource( 6 )
+
+[node name="Time" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 14.0
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = ExtResource( 7 )
 
 
