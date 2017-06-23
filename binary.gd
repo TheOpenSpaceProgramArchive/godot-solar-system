@@ -14,3 +14,7 @@ var grav_const = 6.67408 * pow(10, -11) / pow(PX, 3)
 
 # Convert astronomical unit to pixel units.
 var astro_unit = AU / PX
+
+func _ready():
+	# Move the Sun to the center of the viewport.
+	get_node("Sun").set_pos(Vector2(get_viewport().get_rect().size.width/2, get_viewport().get_rect().size.height/2))

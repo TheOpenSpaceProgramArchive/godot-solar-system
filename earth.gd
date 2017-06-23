@@ -7,13 +7,10 @@ var mass = 5.972 * pow( 10, 24 )
 func radius():
 	return get_parent().astro_unit
 
+# Initial angle of the Earth to the Sun in (deg).
 var angle = 0
 
 func _ready():
-	# Move the Planet one AU from the Sun.
-	var initial_position = Vector2(get_node("../Sun").get_pos().x + (cos(0) * radius()), 0)
-	set_pos(initial_position)
-	
 	set_process(true)
 
 func _process(delta):
