@@ -31,6 +31,7 @@ func sun_look_to_earth_magnitude():
 	return sun_look_to_earth().length()
 
 func _ready():
+	
 	set_process(true)
 
 func _process(delta):
