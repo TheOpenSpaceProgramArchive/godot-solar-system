@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=1]
 
-[ext_resource path="res://game/binary.gd" type="Script" id=1]
-[ext_resource path="res://game/time_multiplier.gd" type="Script" id=2]
-[ext_resource path="res://game/time.gd" type="Script" id=3]
-[ext_resource path="res://game/orbital_speed.gd" type="Script" id=4]
-[ext_resource path="res://game/angle.gd" type="Script" id=5]
+[ext_resource path="res://binary.gd" type="Script" id=1]
+[ext_resource path="res://time_multiplier.gd" type="Script" id=2]
+[ext_resource path="res://time.gd" type="Script" id=3]
+[ext_resource path="res://orbital_speed.gd" type="Script" id=4]
+[ext_resource path="res://angle.gd" type="Script" id=5]
 [ext_resource path="res://assets/sun.png" type="Texture" id=6]
-[ext_resource path="res://game/sun.gd" type="Script" id=7]
+[ext_resource path="res://sun.gd" type="Script" id=7]
 [ext_resource path="res://assets/planet.png" type="Texture" id=8]
-[ext_resource path="res://game/earth.gd" type="Script" id=9]
+[ext_resource path="res://earth.gd" type="Script" id=9]
 
 [node name="Space" type="Node2D"]
 
@@ -83,5 +83,17 @@ script/script = ExtResource( 7 )
 
 texture = ExtResource( 8 )
 script/script = ExtResource( 9 )
+
+[node name="Control" type="Control" parent="."]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
 
 
