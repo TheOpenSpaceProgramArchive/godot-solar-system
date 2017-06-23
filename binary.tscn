@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://binary.gd" type="Script" id=1]
 [ext_resource path="res://time_multiplier.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://sun.gd" type="Script" id=7]
 [ext_resource path="res://planet.png" type="Texture" id=8]
 [ext_resource path="res://earth.gd" type="Script" id=9]
+[ext_resource path="res://asdf.gd" type="Script" id=10]
 
 [node name="Space" type="Node2D"]
 
@@ -83,5 +84,17 @@ script/script = ExtResource( 7 )
 
 texture = ExtResource( 8 )
 script/script = ExtResource( 9 )
+
+[node name="Control" type="Control" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+script/script = ExtResource( 10 )
 
 

@@ -15,7 +15,7 @@ func _ready():
 
 func _process(delta):
 	var position = get_pos()
-	angle += delta * (PI / 180) * 100
+	angle += -delta * (PI / 180) * 100
 	if (angle > 360):
 		angle -= 360
 	position.x = get_node("../Sun").get_pos().x + (cos(angle) * radius())
