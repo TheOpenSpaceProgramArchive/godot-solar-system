@@ -4,16 +4,16 @@ extends Label
 # not call all of these stupid functions during the process?
 
 func find_sun():
-	return get_node("../../Space/Sun")
+	return get_node("../Space/Sun")
 
 func find_earth():
-	return get_node("../../Space/Earth")
+	return get_node("../Space/Earth")
 
 func sun_pos():
-	return get_node("/root/Instrument").get_sun_node().get_pos()
+	return get_node("../../Instrument").get_sun_node().get_pos()
 
 func earth_pos():
-	return find_earth().get_pos()
+	return get_node("../../Instrument").get_earth_node().get_pos()
 
 func sun_rot():
 	return find_sun().get_rot()

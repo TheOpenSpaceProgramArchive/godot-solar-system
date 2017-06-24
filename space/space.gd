@@ -17,4 +17,4 @@ var astro_unit = AU / PX
 
 func _ready():
 	# Move the Sun to the center of the viewport.
-	get_node("Sun").set_pos(Vector2(get_viewport().get_rect().size.width/2, get_viewport().get_rect().size.height/2))
+	get_node("Sun").set_pos(global.get_viewport_center())
