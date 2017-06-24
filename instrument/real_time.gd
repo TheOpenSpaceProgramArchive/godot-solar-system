@@ -7,4 +7,4 @@ func _ready():
 
 func _process(delta):
     accum += delta
-    set_text(str(accum))
+    set_text("Real Time : " + str("%.1f" % accum) + "s")
