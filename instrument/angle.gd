@@ -44,4 +44,4 @@ func _process(delta):
 	if (sun_look_to_earth().y > 0):
 		angle = (180 - angle) + 180
 
-	set_text("Angle relative to x-axis (deg) : " + str("%.f" % angle))
+	set_text("Angle relative to x-axis : " + str("%.f" % angle) + " deg")

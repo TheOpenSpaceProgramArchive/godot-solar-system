@@ -1,4 +1,4 @@
 extends Sprite
 
-# Mass of the Sun in (kg).
-var mass = 1.989e30
+# Mass of the Sun.
+var mass = 1.989e30 # (kg)
