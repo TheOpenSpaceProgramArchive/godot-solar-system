@@ -4,7 +4,7 @@
 [ext_resource path="res://hud/hud.tscn" type="PackedScene" id=2]
 [ext_resource path="res://hud/hud.gd" type="Script" id=3]
 
-[node name="Root Node" type="Node"]
+[node name="Instrument" type="Node"]
 
 [node name="Space" parent="." instance=ExtResource( 1 )]
 

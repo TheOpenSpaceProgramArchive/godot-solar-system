@@ -6,9 +6,14 @@ var PlayerName = "Mike"
 
 func getPlayerName():
 	return PlayerName
+	
+# This is recommended to be (.get_children - 1)
+# But I will leave it like this until I know why.
+func get_first_root_child():
+	get_tree().get_root().get_children()
 
 func _ready():
-	var sun = get_tree()
+	var sun = 'fuck'
 	print(sun)
 	currentScene = get_tree().get_root().get_child(get_tree().get_root().get_child_count() - 1)
 	Globals.set("MAX_POWER_LEVEL", 9000)
