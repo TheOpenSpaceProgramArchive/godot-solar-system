@@ -1,5 +1,5 @@
 # godot-solar-system
-Model solar system built on simple circular motion
+Model solar system built on simple circular motion.
 
 A Godot version 2.1 project.
 
