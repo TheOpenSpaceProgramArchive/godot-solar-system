@@ -2,7 +2,7 @@ extends Label
 
 func _ready():
 	# Find the mass of the Sun.
-	var sunMass = get_node("../../../Node").get_sun_node().mass # kg
+	var sunMass = get_node("../../../Node/Space").sunMass # kg
 
 	# Calculate Earth's orbital velocity.
 	var v = sqrt((global.G * sunMass) / global.AU) * 1e-3 # km/s

@@ -14,7 +14,7 @@ func find_sun():
 
 func orbital_speed():
 	# Find the mass of the Sun.
-	var sunMass = get_node("../Sun").mass # kg
+	var sunMass = get_node("../../Space").sunMass # kg
 
 	# Calculate Earth's orbital velocity.
 	return sqrt((global.G * sunMass) / global.AU) * 1e-3 # km/s

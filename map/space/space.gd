@@ -1,5 +1,8 @@
 extends Node2D
 
+# Mass of the Sun.
+const sunMass = 1.989e30 # (kg)
+
 # Astronomical unit in (m).
 const AU = 1.496 * pow(10, 11)
 

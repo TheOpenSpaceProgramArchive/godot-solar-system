@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://map/space/space.gd" type="Script" id=1]
+[ext_resource path="res://assets/sun.png" type="Texture" id=2]
+[ext_resource path="res://assets/planet.png" type="Texture" id=3]
+[ext_resource path="res://map/space/earth/earth.gd" type="Script" id=4]
+
+[node name="Space" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="Sun" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+
+[node name="Earth" type="Sprite" parent="."]
+
+texture = ExtResource( 3 )
+script/script = ExtResource( 4 )
+
+
