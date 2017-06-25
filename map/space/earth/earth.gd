@@ -5,8 +5,6 @@ var mass = 5.972e24
 
 # Distance of the Earth to the the Sun in (px).
 # radius (x - y)
-func radius():
-	return get_parent().astro_unit
 
 # Find the Sun's location.
 func find_sun():
@@ -55,6 +53,6 @@ func _process(delta):
 	# if (angle > 2 * PI):
 	#	angle -= 2 * PI
 
-	position.x = sun_location.x + (cos(angle) * radius())
-	position.y = sun_location.y + (sin(angle) * radius())
+	position.x = sun_location.x + (cos(angle) * global.au())
+	position.y = sun_location.y + (sin(angle) * global.au())
 	set_pos(position)
