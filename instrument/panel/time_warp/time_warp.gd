@@ -2,7 +2,7 @@
 
 extends Label
 
-const TIME_WARP = 50
+const TIME_WARP = 1000
 
 func _ready():
 	set_text("Time Warp : " + str("%s" % TIME_WARP) + "x")

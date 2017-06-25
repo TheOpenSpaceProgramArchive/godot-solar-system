@@ -23,8 +23,10 @@ func _process(delta):
 	var sun_location = find_sun()
 	# Find your position.
 	var position = get_pos()
+	# Fine the time warp.
+	var time_warp = get_node("../../../Instrument/Panel/Time Warp").TIME_WARP
 	# Init Angular Speed relative to the Sun.
-	angle += -delta * (PI / 180) * 100
+	angle += -delta * (PI / 180) * time_warp
 	if (angle > 360):
 		angle -= 360
 
