@@ -4,7 +4,7 @@ extends Label
 # not call all of these stupid functions during the process?
 
 func earth_pos():
-	return get_node("../../../Map/Space/Earth").get_pos()
+	return get_node("../../../Main/Space/Earth").get_pos()
 
 func earth_look():
 	return Vector2(earth_pos() - global.get_viewport_center())

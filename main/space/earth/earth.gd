@@ -45,7 +45,7 @@ func _process(delta):
 	# Find out how fast your moving.
 	var orbital_speed = orbital_speed() * 1000
 	# Fine the time warp.
-	var time_warp = get_node("../../../Map/Panel/Time Warp").TIME_WARP
+	var time_warp = get_node("../../../Main/Panel/Time Warp").TIME_WARP
 	# Init Angular Speed relative to the Sun.
 	angle += -(delta * orbital_speed * time_warp) / global.AU
 

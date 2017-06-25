@@ -1,9 +1,11 @@
 [gd_scene load_steps=5 format=1]
 
-[ext_resource path="res://map/space/space.gd" type="Script" id=1]
+[ext_resource path="res://main/space/space.gd" type="Script" id=1]
 [ext_resource path="res://assets/sun.png" type="Texture" id=2]
 [ext_resource path="res://assets/planet.png" type="Texture" id=3]
-[ext_resource path="res://map/space/earth/earth.gd" type="Script" id=4]
+[ext_resource path="res://main/space/earth/earth.gd" type="Script" id=4]
+
+
 
 [node name="Space" type="Node2D"]
 

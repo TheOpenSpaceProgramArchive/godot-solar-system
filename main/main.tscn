@@ -1,14 +1,14 @@
 [gd_scene load_steps=8 format=1]
 
-[ext_resource path="res://map/space/space.tscn" type="PackedScene" id=1]
-[ext_resource path="res://map/axis/axis.gd" type="Script" id=2]
-[ext_resource path="res://map/panel/panel.gd" type="Script" id=3]
-[ext_resource path="res://map/panel/real_time/real_time.gd" type="Script" id=4]
-[ext_resource path="res://map/panel/orbital_speed/orbital_speed.gd" type="Script" id=5]
-[ext_resource path="res://map/panel/angle/angle.gd" type="Script" id=6]
-[ext_resource path="res://map/panel/time_warp/time_warp.gd" type="Script" id=7]
+[ext_resource path="res://main/space/space.tscn" type="PackedScene" id=1]
+[ext_resource path="res://main/axis/axis.gd" type="Script" id=2]
+[ext_resource path="res://main/panel/panel.gd" type="Script" id=3]
+[ext_resource path="res://main/panel/real_time/real_time.gd" type="Script" id=4]
+[ext_resource path="res://main/panel/orbital_speed/orbital_speed.gd" type="Script" id=5]
+[ext_resource path="res://main/panel/angle/angle.gd" type="Script" id=6]
+[ext_resource path="res://main/panel/time_warp/time_warp.gd" type="Script" id=7]
 
-[node name="Map" type="Node"]
+[node name="Main" type="Node"]
 
 [node name="Space" parent="." instance=ExtResource( 1 )]
 
@@ -16,6 +16,7 @@ editor/display_folded = true
 
 [node name="Axis" type="Control" parent="."]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -58,6 +59,7 @@ max_lines_visible = -1
 
 [node name="Panel" type="Panel" parent="."]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
