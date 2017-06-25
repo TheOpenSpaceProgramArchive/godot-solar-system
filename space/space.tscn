@@ -1,17 +1,11 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://space/space.gd" type="Script" id=1]
 [ext_resource path="res://space/time_multiplier.gd" type="Script" id=2]
-[ext_resource path="res://instrument/real_time.gd" type="Script" id=3]
-[ext_resource path="res://instrument/orbital_speed.gd" type="Script" id=4]
-[ext_resource path="res://space/angle.gd" type="Script" id=5]
-[ext_resource path="res://assets/sun.png" type="Texture" id=6]
-[ext_resource path="res://space/sun.gd" type="Script" id=7]
-[ext_resource path="res://assets/planet.png" type="Texture" id=8]
-[ext_resource path="res://space/earth.gd" type="Script" id=9]
-
-
-
+[ext_resource path="res://assets/sun.png" type="Texture" id=3]
+[ext_resource path="res://space/sun.gd" type="Script" id=4]
+[ext_resource path="res://assets/planet.png" type="Texture" id=5]
+[ext_resource path="res://space/earth.gd" type="Script" id=6]
 
 [node name="Space" type="Node2D"]
 
@@ -32,59 +26,14 @@ lines_skipped = 0
 max_lines_visible = -1
 script/script = ExtResource( 2 )
 
-[node name="Time" type="Label" parent="."]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 273.0
-margin/top = 46.0
-margin/right = 313.0
-margin/bottom = 60.0
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-script/script = ExtResource( 3 )
-
-[node name="Orbital Speed" type="Label" parent="."]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 290.0
-margin/top = 91.0
-margin/right = 341.0
-margin/bottom = 105.0
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-script/script = ExtResource( 4 )
-
-[node name="Angle" type="Label" parent="."]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 306.0
-margin/top = 137.0
-margin/right = 346.0
-margin/bottom = 151.0
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-script/script = ExtResource( 5 )
-
 [node name="Sun" type="Sprite" parent="."]
 
-texture = ExtResource( 6 )
-script/script = ExtResource( 7 )
+texture = ExtResource( 3 )
+script/script = ExtResource( 4 )
 
 [node name="Earth" type="Sprite" parent="."]
 
-texture = ExtResource( 8 )
-script/script = ExtResource( 9 )
+texture = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 
