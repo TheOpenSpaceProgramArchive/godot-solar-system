@@ -1,8 +1,5 @@
 extends Label
 
-# All this shit needs to be rewritten. How is it possible to
-# not call all of these stupid functions during the process?
-
 func earth_pos():
 	return get_node("../../../Main/Space/Earth").get_pos()
 

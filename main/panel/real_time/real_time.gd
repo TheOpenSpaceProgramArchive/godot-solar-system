@@ -10,6 +10,4 @@ func _ready():
 
 func _process(delta):
     accum += delta
-
-    # Show a counter each increasing frame.
     set_text("Real Time : " + str("%.1f" % accum) + " s")
