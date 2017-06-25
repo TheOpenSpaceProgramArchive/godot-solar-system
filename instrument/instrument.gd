@@ -5,6 +5,6 @@ func get_sun_node():
 
 func get_earth_node():
 	return get_node("Space/Earth")
-
-func _ready():
-	print(global.get_viewport_center())
+	
+func axis_length():
+	return 2 * global.au()

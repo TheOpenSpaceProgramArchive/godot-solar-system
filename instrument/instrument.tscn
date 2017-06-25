@@ -1,11 +1,17 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://instrument/instrument.gd" type="Script" id=1]
 [ext_resource path="res://space/space.tscn" type="PackedScene" id=2]
-[ext_resource path="res://instrument/real_time.gd" type="Script" id=3]
-[ext_resource path="res://instrument/angle.gd" type="Script" id=4]
-[ext_resource path="res://instrument/orbital_speed.gd" type="Script" id=5]
-[ext_resource path="res://instrument/line.gd" type="Script" id=6]
+[ext_resource path="res://instrument/axis/axis.gd" type="Script" id=3]
+[ext_resource path="res://instrument/panel/panel.gd" type="Script" id=4]
+[ext_resource path="res://instrument/panel/real_time.gd" type="Script" id=5]
+[ext_resource path="res://instrument/panel/orbital_speed.gd" type="Script" id=6]
+[ext_resource path="res://instrument/panel/angle.gd" type="Script" id=7]
+
+
+
+
+
 
 [node name="Instrument" type="Node"]
 
@@ -13,37 +19,64 @@ script/script = ExtResource( 1 )
 
 [node name="Space" parent="." instance=ExtResource( 2 )]
 
-[node name="Real Time" type="Label" parent="."]
+editor/display_folded = true
 
-focus/ignore_mouse = true
+[node name="Axis" type="Control" parent="."]
+
+editor/display_folded = true
+focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 561.0
-margin/top = 446.0
-margin/right = 601.0
-margin/bottom = 460.0
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
 script/script = ExtResource( 3 )
 
-[node name="Angle" type="Label" parent="."]
+[node name="Angle" type="Label" parent="Axis"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 432.0
-margin/top = 415.0
-margin/right = 472.0
-margin/bottom = 429.0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 14.0
+text = "0 deg"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="Length" type="Label" parent="Axis"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 90.0
+margin/bottom = 14.0
+text = "Length = 2 AU"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Panel" type="Panel" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 300.0
+margin/top = 20.0
+margin/right = 470.0
+margin/bottom = 120.0
 script/script = ExtResource( 4 )
 
-[node name="Orbital Speed" type="Label" parent="."]
+[node name="Real Time" type="Label" parent="Panel"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -58,17 +91,35 @@ lines_skipped = 0
 max_lines_visible = -1
 script/script = ExtResource( 5 )
 
-[node name="Line" type="Control" parent="."]
+[node name="Orbital Speed" type="Label" parent="Panel"]
 
-focus/ignore_mouse = false
+focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
-size_flags/vertical = 2
+size_flags/vertical = 0
+margin/left = -300.0
+margin/top = -20.0
+margin/right = -260.0
+margin/bottom = -6.0
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = ExtResource( 6 )
+
+[node name="Angle" type="Label" parent="Panel"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 40.0
-margin/bottom = 40.0
-script/script = ExtResource( 6 )
+margin/bottom = 14.0
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = ExtResource( 7 )
 
 
 [editable path="Space"]
