@@ -1,18 +1,17 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=11 format=1]
 
-[ext_resource path="res://main/space/space.tscn" type="PackedScene" id=1]
-[ext_resource path="res://main/axis/axis.gd" type="Script" id=2]
-[ext_resource path="res://main/panel/panel.gd" type="Script" id=3]
-[ext_resource path="res://main/panel/real_time/real_time.gd" type="Script" id=4]
-[ext_resource path="res://main/panel/orbital_speed/orbital_speed.gd" type="Script" id=5]
-[ext_resource path="res://main/panel/angle/angle.gd" type="Script" id=6]
-[ext_resource path="res://main/panel/time_warp/time_warp.gd" type="Script" id=7]
+[ext_resource path="res://main/axis/axis.gd" type="Script" id=1]
+[ext_resource path="res://main/panel/panel.gd" type="Script" id=2]
+[ext_resource path="res://main/panel/real_time/real_time.gd" type="Script" id=3]
+[ext_resource path="res://main/panel/orbital_speed/orbital_speed.gd" type="Script" id=4]
+[ext_resource path="res://main/panel/angle/angle.gd" type="Script" id=5]
+[ext_resource path="res://main/panel/time_warp/time_warp.gd" type="Script" id=6]
+[ext_resource path="res://main/space/space.gd" type="Script" id=7]
+[ext_resource path="res://assets/sun.png" type="Texture" id=8]
+[ext_resource path="res://assets/planet.png" type="Texture" id=9]
+[ext_resource path="res://main/space/earth/earth.gd" type="Script" id=10]
 
 [node name="Main" type="Node"]
-
-[node name="Space" parent="." instance=ExtResource( 1 )]
-
-editor/display_folded = true
 
 [node name="Axis" type="Control" parent="."]
 
@@ -25,7 +24,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 40.0
 margin/bottom = 40.0
-script/script = ExtResource( 2 )
+script/script = ExtResource( 1 )
 
 [node name="Angle" type="Label" parent="Axis"]
 
@@ -68,7 +67,7 @@ margin/left = 300.0
 margin/top = 20.0
 margin/right = 500.0
 margin/bottom = 120.0
-script/script = ExtResource( 3 )
+script/script = ExtResource( 2 )
 
 [node name="Real Time" type="Label" parent="Panel"]
 
@@ -83,7 +82,7 @@ margin/bottom = 14.0
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = ExtResource( 4 )
+script/script = ExtResource( 3 )
 
 [node name="Orbital Speed" type="Label" parent="Panel"]
 
@@ -98,7 +97,7 @@ margin/bottom = 14.0
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = ExtResource( 5 )
+script/script = ExtResource( 4 )
 
 [node name="Angle" type="Label" parent="Panel"]
 
@@ -113,7 +112,7 @@ margin/bottom = 14.0
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = ExtResource( 6 )
+script/script = ExtResource( 5 )
 
 [node name="Time Warp" type="Label" parent="Panel"]
 
@@ -128,7 +127,19 @@ margin/bottom = 14.0
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script/script = ExtResource( 6 )
+
+[node name="Space" type="Node2D" parent="."]
+
 script/script = ExtResource( 7 )
 
+[node name="Sun" type="Sprite" parent="Space"]
 
-[editable path="Space"]
+texture = ExtResource( 8 )
+
+[node name="Earth" type="Sprite" parent="Space"]
+
+texture = ExtResource( 9 )
+script/script = ExtResource( 10 )
+
+
