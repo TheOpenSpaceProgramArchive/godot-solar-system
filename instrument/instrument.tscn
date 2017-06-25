@@ -59,13 +59,14 @@ max_lines_visible = -1
 
 [node name="Panel" type="Panel" parent="."]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 300.0
 margin/top = 20.0
-margin/right = 470.0
+margin/right = 500.0
 margin/bottom = 120.0
 script/script = ExtResource( 4 )
 

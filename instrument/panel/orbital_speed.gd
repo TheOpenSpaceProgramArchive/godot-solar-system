@@ -7,4 +7,4 @@ func _ready():
 	# Calculate Earth's orbital velocity.
 	var v = sqrt((global.G * sunMass) / global.AU) * 1e-3 # km/s
 	
-	set_text("Orbital Speed : " + str("%.1f" % v) + " (m/s)")
+	set_text("Orbital Speed : " + str("%.1f" % v) + " km/s")
