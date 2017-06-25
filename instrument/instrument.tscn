@@ -8,18 +8,11 @@
 [ext_resource path="res://instrument/panel/orbital_speed.gd" type="Script" id=6]
 [ext_resource path="res://instrument/panel/angle.gd" type="Script" id=7]
 
-
-
-
-
-
 [node name="Instrument" type="Node"]
 
 script/script = ExtResource( 1 )
 
 [node name="Space" parent="." instance=ExtResource( 2 )]
-
-editor/display_folded = true
 
 [node name="Axis" type="Control" parent="."]
 
@@ -97,10 +90,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -300.0
-margin/top = -20.0
-margin/right = -260.0
-margin/bottom = -6.0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 14.0
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
