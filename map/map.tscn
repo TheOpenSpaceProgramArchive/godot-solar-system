@@ -12,6 +12,8 @@
 
 [node name="Space" parent="." instance=ExtResource( 1 )]
 
+editor/display_folded = true
+
 [node name="Axis" type="Control" parent="."]
 
 focus/ignore_mouse = false
