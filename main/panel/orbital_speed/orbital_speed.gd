@@ -1,11 +1,7 @@
+# Orbital Speed is equal to sqrt(G * M / r)
+
 extends Label
 
 func _ready():
-	# Find the mass of the Sun.
-	var sunMass = get_node("../../../Main/Space").sunMass # kg
-
-	# Calculate Earth's orbital velocity.
-	var v = sqrt((global.G * sunMass) / global.AU) * 1e-3 # km/s
-
-	# Show Earth's orbital velocity to one decimal.
-	set_text("Orbital Speed : " + str("%.1f" % v) + " km/s")
+	var s = sqrt((global.G * global.sunMass) / global.AU) * 1e-3 # km/s
+	set_text("Orbital Speed : " + str("%.1f" % s) + " km/s")

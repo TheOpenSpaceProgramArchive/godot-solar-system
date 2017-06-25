@@ -131,6 +131,7 @@ script/script = ExtResource( 6 )
 
 [node name="Space" type="Node2D" parent="."]
 
+editor/display_folded = true
 script/script = ExtResource( 7 )
 
 [node name="Sun" type="Sprite" parent="Space"]
