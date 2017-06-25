@@ -24,7 +24,7 @@ func _process(delta):
 	# Find your position.
 	var position = get_pos()
 	# Init Angular Speed relative to the Sun.
-	angle += -delta * (PI / 180) * 5
+	angle += -delta * (PI / 180) * 20
 	if (angle > 360):
 		angle -= 360
 
