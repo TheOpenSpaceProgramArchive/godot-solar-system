@@ -1,10 +1,8 @@
+# Time warp is the acceleration of game speed.
+
 extends Label
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+const TIME_WARP = 50
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
+	set_text("Time Warp : " + str("%s" % TIME_WARP) + "x")
