@@ -14,7 +14,7 @@ func _ready():
 
 func _process(delta):
 	var angle = acos(earth_look().x / global.au()) * (180 / PI)
-	if (earth_look().y > 0.0):
+	if (earth_look().y > 0):
 		angle = 360 - angle
 
 	set_text("Angle : " + str("%.f" % angle) + " deg")
