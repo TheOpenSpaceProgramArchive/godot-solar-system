@@ -1,4 +1,4 @@
-extends Sprite
+extends Node2D
 
 # Radius of the planet.
 var radius = 1.0 # Ro

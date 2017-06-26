@@ -131,7 +131,9 @@ script/script = ExtResource( 6 )
 
 script/script = ExtResource( 7 )
 
-[node name="Earth" type="Sprite" parent="Space"]
+[node name="Earth-old" type="Sprite" parent="Space"]
+
+[node name="Earth" type="Node2D" parent="Space"]
 
 script/script = ExtResource( 8 )
 
