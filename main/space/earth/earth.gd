@@ -12,7 +12,7 @@ func _process(delta):
 	# Find your position.
 	var position = get_pos()
 	# Find out how fast you are moving.
-	var orbitalSpeed = sqrt((global.G * global.MASS_SUN) / global.AU)
+	var orbitalSpeed = sqrt((global.G * global.stellarMass) / global.AU)
 	# Find the time warp.
 	var timeWarp = get_node("../../../Main/Panel/Time Warp").TIME_WARP
 	# Do the stuff.
