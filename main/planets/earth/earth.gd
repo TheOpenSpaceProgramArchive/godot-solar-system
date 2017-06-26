@@ -1,37 +1,35 @@
-extends Node2D
+extends "res://main/planets/planets.gd"
+
+# Color of the planet
+var color = Color(0.0, 0.0, 1.0)
 
 # Radius of the planet.
 var radius = 1.0 # Ro
 
-# Initialization angle.
-var angle = 0
+# Semi-major axis raitio of the orbit.
+var semiMajorAxisRatio = 1.0 # AU
 
-# Radius of the planet.
-func radius():
-	return 1000 * global.au() * radius * global.EARTH_RADIUS / global.AU # px
+# Semi major axis of the orbit.
+var semiMajorAxis = semi_major_axis(semiMajorAxisRatio) # m
 
-# Draw the planet at 500x its normal size.
+# Orbital Speed of the planet.
+var orbitalSpeed = orbital_speed(semiMajorAxis) # m/s
+
+# Draw the planet.
 func _draw():
-	draw_circle(get_pos(), 700 * radius(), Color(0.0, 0.0, 1.0))
-
-func _ready():
-	set_process(true)
+	draw_circle(get_pos(), DRAW_SCALE * radius(radius), color)
 
 func _process(delta):
 	# Find your position.
 	var position = get_pos()
-	# Find the Sun.
+	# Find the Sun's position.
 	var sunPosition = global.get_viewport_center()
-	# Find out how fast you are moving.
-	var orbitalSpeed = sqrt((global.G * global.stellarMass) / global.AU) # km/s
-	# Find the time warp.
-	var timeWarp = get_node("../../../Main/Panel/Time Warp").TIME_WARP
 	# Process the angle.
-	angle += delta * orbitalSpeed * timeWarp / global.AU
-	if (angle > 2 * PI):
-		angle -= 2 * PI
+	theta += time_warp() * delta * orbitalSpeed / semiMajorAxis
+	if (theta > 2 * PI):
+		theta -= 2 * PI
 	# Update your position.
-	position.x = sunPosition.x + (cos(angle) * global.au())
-	position.y = sunPosition.y - (sin(angle) * global.au())
+	position.x = sunPosition.x + (cos(theta) * semiMajorAxisRatio * global.au())
+	position.y = sunPosition.y - (sin(theta) * semiMajorAxisRatio * global.au())
 	# Set the new position.
 	set_pos(position)
