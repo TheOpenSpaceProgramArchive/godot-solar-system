@@ -7,7 +7,7 @@ const G = 6.67408e-11 # (m^3 kg^-1 s^-2)
 const AU = 1.49598e11 # (m)
 
 # Mass of the sun.
-const sunMass = 1.989e30 # (kg)
+const MASS_SUN = 1.989e30 # (kg)
 
 # Convert Astronimal unit to pixels.
 # One AU is equal to 1/4 of the viewport height.
