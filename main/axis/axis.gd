@@ -14,4 +14,6 @@ func _draw():
 	
 	# Tag the axis.
 	get_node("Angle").set_pos(to + Vector2(0.0, -18.0))
+	get_node("Angle").set_text("0 deg")
 	get_node("Length").set_pos(to + Vector2(0.0, 6.0))
+	get_node("Length").set_text("Length = " + str(axisLength) + " AU")
