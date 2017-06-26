@@ -24,6 +24,9 @@ const SURFACE_GRAVITY = 4.43812 # log(cgs)
 # Stellar mass of the star.
 var stellarMass = STELLAR_MASS * SOLAR_MASS # kg
 
+# Earth radius.
+const EARTH_RADIUS = 6371 # km
+
 # Viewport center.
 #
 # Vector2
@@ -43,5 +46,5 @@ func au():
 #
 # float
 #
-func radius():
+func star_radius():
 	return au() * sqrt(100 * G * stellarMass / pow(10, SURFACE_GRAVITY)) / AU # px

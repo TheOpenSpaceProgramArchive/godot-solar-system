@@ -3,7 +3,16 @@ extends Sprite
 # Angle of the Earth to Sun to axis.
 var angle = 0
 
+var radius = 1.0 # Ro
+
+func radius():
+	return global.au() * radius * global.EARTH_RADIUS / global.AU # px
+
+func _draw():
+	draw_circle(get_pos(), 2000000 * radius(), Color(0.0, 0.0, 0.0))
+
 func _ready():
+	print(radius() * 2000000)
 	set_process(true)
 
 func _process(delta):
