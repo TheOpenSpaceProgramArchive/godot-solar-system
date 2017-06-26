@@ -24,9 +24,12 @@ const SURFACE_GRAVITY = 4.43812 # log(cgs)
 # Stellar mass of the star.
 var stellarMass = STELLAR_MASS * SOLAR_MASS # kg
 
-# Radius of the star.
-# Why is this slightly off from Solar radius = 695,700 km ?
-var radius = sqrt(100 * G * stellarMass / pow(10, SURFACE_GRAVITY)) / 1000 # km
+# Viewport center.
+#
+# Vector2
+#
+func get_viewport_center():
+	return Vector2(get_viewport().get_rect().size.width/2, get_viewport().get_rect().size.height/2)
 
 # Viewport astronomical unit.
 #
@@ -35,12 +38,10 @@ var radius = sqrt(100 * G * stellarMass / pow(10, SURFACE_GRAVITY)) / 1000 # km
 func au():
 	return get_viewport().get_rect().size.height / 4 # (px)
 
-# Viewport center.
+# Radius of the star.
+# Why is this slightly off from Solar radius = 695,700 km ?
 #
-# Vector2
+# float
 #
-func get_viewport_center():
-	return Vector2(get_viewport().get_rect().size.width/2, get_viewport().get_rect().size.height/2)
-
-func _ready():
-	print(radius)
+func radius():
+	return au() * sqrt(100 * G * stellarMass / pow(10, SURFACE_GRAVITY)) / AU # px
