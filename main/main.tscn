@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://main/axis/axis.gd" type="Script" id=1]
 [ext_resource path="res://main/panel/panel.gd" type="Script" id=2]
@@ -7,8 +7,7 @@
 [ext_resource path="res://main/panel/angle/angle.gd" type="Script" id=5]
 [ext_resource path="res://main/panel/time_warp/time_warp.gd" type="Script" id=6]
 [ext_resource path="res://main/space/space.gd" type="Script" id=7]
-[ext_resource path="res://assets/planet.png" type="Texture" id=8]
-[ext_resource path="res://main/space/earth/earth.gd" type="Script" id=9]
+[ext_resource path="res://main/space/earth/earth.gd" type="Script" id=8]
 
 [node name="Main" type="Node"]
 
@@ -130,12 +129,10 @@ script/script = ExtResource( 6 )
 
 [node name="Space" type="Node2D" parent="."]
 
-editor/display_folded = true
 script/script = ExtResource( 7 )
 
 [node name="Earth" type="Sprite" parent="Space"]
 
-texture = ExtResource( 8 )
-script/script = ExtResource( 9 )
+script/script = ExtResource( 8 )
 
 

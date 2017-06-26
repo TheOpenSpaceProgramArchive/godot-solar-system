@@ -6,13 +6,13 @@ var angle = 0
 var radius = 1.0 # Ro
 
 func radius():
-	return global.au() * radius * global.EARTH_RADIUS / global.AU # px
+	return 1000 * global.au() * radius * global.EARTH_RADIUS / global.AU # px
 
 func _draw():
-	draw_circle(get_pos(), 2000000 * radius(), Color(0.0, 0.0, 0.0))
+	draw_circle(get_pos(), 500 * radius(), Color(0.0, 0.0, 1.0))
 
 func _ready():
-	print(radius() * 2000000)
+	print(radius() * global.AU / global.au())
 	set_process(true)
 
 func _process(delta):
