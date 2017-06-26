@@ -11,11 +11,11 @@ func _process(delta):
 	var sunPosition = global.get_viewport_center()
 	# Find your position.
 	var position = get_pos()
-	# Find out how fast your moving.
+	# Find out how fast you are moving.
 	var orbitalSpeed = sqrt((global.G * global.MASS_SUN) / global.AU)
-	# Fine the time warp.
+	# Find the time warp.
 	var timeWarp = get_node("../../../Main/Panel/Time Warp").TIME_WARP
-	# Do the stuff
+	# Do the stuff.
 	angle += -(delta * orbitalSpeed * timeWarp) / global.AU
 
 
