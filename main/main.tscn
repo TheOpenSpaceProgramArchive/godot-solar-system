@@ -14,6 +14,7 @@
 
 [node name="Axis" type="Control" parent="."]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -129,6 +130,7 @@ script/script = ExtResource( 6 )
 
 [node name="Space" type="Node2D" parent="."]
 
+editor/display_folded = true
 script/script = ExtResource( 7 )
 
 [node name="Earth" type="Sprite" parent="Space"]
