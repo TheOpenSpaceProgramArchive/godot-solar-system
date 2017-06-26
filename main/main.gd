@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 # Draw the sun in the middle of the viewport at 20x its normal size.
 func _draw():

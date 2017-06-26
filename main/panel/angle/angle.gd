@@ -1,7 +1,7 @@
 extends Label
 
 func earth_pos():
-	return get_node("../../../Main/Space/Earth").get_pos()
+	return get_node("../../../Main/Planets/Earth").get_pos()
 
 func earth_look():
 	return Vector2(earth_pos() - global.get_viewport_center())

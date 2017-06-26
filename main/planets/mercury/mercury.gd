@@ -15,7 +15,7 @@ func radius():
 
 # Draw the planet at 500x its normal size.
 func _draw():
-	draw_circle(get_pos(), 500 * radius(), Color(1.0, 0.0, 0.0))
+	draw_circle(get_pos(), 700 * radius(), Color(1.0, 0.0, 0.0))
 
 func _ready():
 	set_process(true)
