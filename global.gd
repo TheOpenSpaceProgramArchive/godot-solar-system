@@ -48,3 +48,15 @@ func au():
 #
 func star_radius():
 	return au() * sqrt(100 * G * stellarMass / pow(10, SURFACE_GRAVITY)) / AU # px
+
+func _ready():
+	var root = get_tree().get_root()
+	root.connect("size_changed", self, "resize")
+	var resolution = root.get_rect()
+	print(resolution)
+
+# Event called when viewport size is changed.
+func resize():
+	var root = get_tree().get_root()
+	var resolution = root.get_rect()
+	print(resolution)
