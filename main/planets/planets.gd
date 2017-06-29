@@ -23,4 +23,24 @@ func time_warp():
     return get_node("../../../Main/Panel/Time Warp").TIME_WARP
 
 func _ready():
-    set_process(true)
+	set_process(true)
+	#add_child(node)
+
+#class CustomObject : public Object {
+#	OBJ_TYPE(CustomObject,Object); // this is required to inherit
+#};
+
+#obj = memnew(CustomObject);
+#print_line("Object Type: ",obj->get_type()); //print object type
+#obj2 = obj->cast_to<OtherType>(); // converting between types, this also works without RTTI enabled.
+
+#class Planet:
+	#var a = 10
+
+
+#var node=Planet.new()
+
+
+
+#obj->connect(<signal>,target_instance,target_method)
+#obj->connect("yeezy_season_approaching",self,"_some_callback")

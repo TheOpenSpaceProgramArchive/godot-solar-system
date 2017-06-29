@@ -140,11 +140,11 @@ script/script = ExtResource( 7 )
 
 [node name="Planets" type="Node2D" parent="."]
 
-editor/display_folded = true
 script/script = ExtResource( 8 )
 
 [node name="Mercury" type="Node2D" parent="Planets"]
 
+visibility/visible = false
 script/script = ExtResource( 9 )
 
 [node name="Venus" type="Node2D" parent="Planets"]

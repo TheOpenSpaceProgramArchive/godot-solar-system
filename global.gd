@@ -27,11 +27,13 @@ var stellarMass = STELLAR_MASS * SOLAR_MASS # kg
 # Earth radius.
 const EARTH_RADIUS = 6371 # km
 
+signal yeezy_season_approaching
 # Viewport center.
 #
 # Vector2
 #
 func get_viewport_center():
+	emit_signal("yeezy_season_approaching")
 	return Vector2(get_viewport().get_rect().size.width/2, get_viewport().get_rect().size.height/2)
 
 # Viewport astronomical unit.
