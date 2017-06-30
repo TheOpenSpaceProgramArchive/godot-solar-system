@@ -1,4 +1,6 @@
 extends Control
+# sub-scene(s)
+var planet = preload("res://solar_system/planet/planet.tscn").instance()
 
 # Gravitational constant. https://en.wikipedia.org/wiki/Gravitational_constant
 const G = 6.67408e-11 # m^3 / kg^1 / s^2
@@ -11,8 +13,8 @@ const SOLAR_MASS = 1.99e30 # kg
 
 # Stellar mass. https://en.wikipedia.org/wiki/Stellar_mass
 # Stellar mass range of typical G-type main-sequence stars:
-# 0.84 Mo <-----------> 1.15 Mo
-export var stellar_mass = 1.0 # Mo
+# 0.84 M(*) <-----------> 1.15 M(*)
+export var stellar_mass = 1.0 # M(*)
 
 # Standard gravitational parameter. https://en.wikipedia.org/wiki/Standard_gravitational_parameter
 var u = G * SOLAR_MASS * stellar_mass # m^3 / s^2
@@ -22,40 +24,39 @@ var u = G * SOLAR_MASS * stellar_mass # m^3 / s^2
 # log g = 4.48 <-----------> log g = 4.32
 export var log_g = 4.44 # cgs
 
-# Solar radius. https://en.wikipedia.org/wiki/Solar_radius
-var solar_radius = sqrt(100 * u / pow(10, log_g)) # m
+# Stellar radius.
+# Derived from surface gravity and standard gravitational parameter.
+var stellar_radius = sqrt(100 * u / pow(10, log_g)) # m
 
-# Solar radius. https://en.wikipedia.org/wiki/Solar_radius
-const SOLAR_RADIUS = 6.957e5 # km
+#######################
+##### EARTH STUFF #####
+#######################
 
-# === 27.94 m / s^2
-var g = pow(10, log_g) / 100
+# Earth radius. https://en.wikipedia.org/wiki/Earth_radius
+const EARTH_RADIUS = 6371 # km
 
+# Default planets.
+var earth = {
+	mass = 1.0, # M(+)
+	semimajor_axis = 149.60e6 / 1000, # m
+	eccentricity = 0.0
+}
+
+var orbital_speed = sqrt(u / earth["semimajor_axis"])
+
+# Add the sub-scene(s).
 func _ready():
-	# I don't think these are floats?
-	var au = get_pos().y / 3
-	print(au)
+	planet.orbital_speed = orbital_speed
+	planet.semimajor_axis = earth["semimajor_axis"]
+	#planet.initialize(earth["mass"], earth["semimajor_axis"], earth["eccentricity"], 4)
+	print(planet.orbital_speed)
+	add_child(planet)
 
-func au():
-	return sqrt(100)
+#############################
+#############################
 
-
-
-
-const SOLAR_RADIUS = 6.957e5 # km
-#func _init():
-	#connect("center", self, "_set_sun_pos")
-#
-#func _ready():
-	#connect("center", self, "_set_sun_pos")
-	# Called every time the node is added to the scene.
-	# Initialization here
-	#set_pos(Vector2(300, 300))
 func _draw():
-	
-	var au = get_pos().y / 3
-	var radius = au * solar_radius / AU
-	print(radius)
-	
-	#var star_radius = au * sqrt(100 * G * stellarMass / pow(10, SURFACE_GRAVITY)) / AU # px
+	var au = get_pos().y / 3 # px
+	var radius = stellar_radius * au / AU # px
+	var color = Color(1.0, 1.0, 1.0) # white
 	draw_circle(Vector2(0.0, 0.0), 20 * radius, Color(1.0, 1.0, 1.0))
