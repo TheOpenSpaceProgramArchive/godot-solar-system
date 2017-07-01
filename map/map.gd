@@ -1,5 +1,5 @@
 extends Control
-# sub-scene(s)
+# Sub-scene(s).
 var solar_system = preload("res://solar_system/solar_system.tscn").instance()
 
 # Width of the Map.
@@ -10,7 +10,6 @@ func get_viewport_width():
 func au():
 	# The Map's AU will be 1/8 the Map height.
 	var au = get_viewport().get_rect().size.height / 8 # px
-	# I don't think these are floats?
 	return au # px
 
 # Add the sub-scene(s).

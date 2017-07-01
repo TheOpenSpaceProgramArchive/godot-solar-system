@@ -1,13 +1,11 @@
 extends Control
-# sub-scene(s)
-var planet = preload("res://solar_system/planet/planet.tscn").instance()
 
 # Gravitational constant. https://en.wikipedia.org/wiki/Gravitational_constant
 const G = 6.67408e-11 # m^3 / kg^1 / s^2
 
 # Astronomical unit.
 const AU = 1.495987e11 # m
-	
+
 # Solar Mass. https://en.wikipedia.org/wiki/Solar_mass
 const SOLAR_MASS = 1.99e30 # kg
 
@@ -15,6 +13,7 @@ const SOLAR_MASS = 1.99e30 # kg
 # Stellar mass range of typical G-type main-sequence stars:
 # 0.84 M(*) <-----------> 1.15 M(*)
 export var stellar_mass = 1.0 # M(*)
+signal stellar_mass
 
 # Standard gravitational parameter. https://en.wikipedia.org/wiki/Standard_gravitational_parameter
 var u = G * SOLAR_MASS * stellar_mass # m^3 / s^2
@@ -35,21 +34,42 @@ var stellar_radius = sqrt(100 * u / pow(10, log_g)) # m
 # Earth radius. https://en.wikipedia.org/wiki/Earth_radius
 const EARTH_RADIUS = 6371 # km
 
-# Default planets.
-var earth = {
-	mass = 1.0, # M(+)
-	semimajor_axis = 149.60e6 / 1000, # m
-	eccentricity = 0.0
-}
 
-var orbital_speed = sqrt(u / earth["semimajor_axis"])
+
+
+func shit():
+	print("shit")
+
+# Default planets.
+#var earth = {
+#	mass = 1.0, # M(+)
+#	semimajor_axis = 149.60e6 * 1000, # m
+#	eccentricity = 0.0
+#}
+
+#var orbital_speed = sqrt(u / earth["semimajor_axis"])
+
+# Sub-scene(s).
+var planet = load("res://planet/planet.tscn").instance()
+
+export var semimajor_axis = 149.6e9 # km
+
+func orbital_velocity(a):
+	return sqrt(u/a)
 
 # Add the sub-scene(s).
 func _ready():
-	planet.orbital_speed = orbital_speed
-	planet.semimajor_axis = earth["semimajor_axis"]
+	connect("shit", self, "shit")
+	emit_signal("stellar_mass")
+	var au = get_pos().y / 3 # px
+	planet.u = u
+	planet.au = au
+	planet.semimajor_axis = semimajor_axis # km
+	planet.orbital_speed = orbital_velocity(semimajor_axis)
+	#planet.orbital_speed = orbital_speed
+	#planet.semimajor_axis = 149.6e6 # km
 	#planet.initialize(earth["mass"], earth["semimajor_axis"], earth["eccentricity"], 4)
-	print(planet.orbital_speed)
+	#print(planet.orbital_speed)
 	add_child(planet)
 
 #############################
