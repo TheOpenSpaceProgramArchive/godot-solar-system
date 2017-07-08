@@ -5,4 +5,4 @@ A Godot version 2.1 project.
 
 
 ToDo:
-1. Manage to compile Godot
+1. Elliptical Orbits.
