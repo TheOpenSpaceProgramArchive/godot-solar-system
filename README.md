@@ -1,8 +1,14 @@
 # godot-solar-system
-Model solar system built on simple circular motion.
+## A Godot 2.1 project.
 
-A Godot version 2.1 project.
+A 2-D solar system built on simple circular motion.
 
+### To play:
+**1.** Install [Godot Engine](https://godotengine.org/).
 
-ToDo:
+**2.** Open the repo in the Godot editor.
+
+**3.** Hit Play.
+
+### Todo:
 1. Elliptical Orbits.
